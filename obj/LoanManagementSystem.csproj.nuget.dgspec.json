@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\COLLABERA\\source\\repos\\Loan-Management-System\\LoanManagementSystem.csproj": {}
+    "C:\\Users\\Trainee\\Desktop\\LMSSS\\Loan-Management-System\\LoanManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\COLLABERA\\source\\repos\\Loan-Management-System\\LoanManagementSystem.csproj": {
+    "C:\\Users\\Trainee\\Desktop\\LMSSS\\Loan-Management-System\\LoanManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\COLLABERA\\source\\repos\\Loan-Management-System\\LoanManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Trainee\\Desktop\\LMSSS\\Loan-Management-System\\LoanManagementSystem.csproj",
         "projectName": "LoanManagementSystem",
-        "projectPath": "C:\\Users\\COLLABERA\\source\\repos\\Loan-Management-System\\LoanManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\COLLABERA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\COLLABERA\\source\\repos\\Loan-Management-System\\obj\\",
+        "projectPath": "C:\\Users\\Trainee\\Desktop\\LMSSS\\Loan-Management-System\\LoanManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Trainee\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Trainee\\Desktop\\LMSSS\\Loan-Management-System\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\COLLABERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Trainee\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
