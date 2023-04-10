@@ -1,49 +1,36 @@
-using LoanManagementSystem.Data;
-using LoanManagementSystem.Repository.Contract;
-using LoanManagementSystem.Repository;
-using Microsoft.AspNetCore.Identity;
-using LoanManagementSystem.Models;
+
+using LoanManagementSystemAPI.Data;
+using LoanManagementSystemAPI.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient();
-builder.Services.AddDbContext<ApplicationDbContext, ApplicationDbContext>();
-builder.Services.AddScoped<IAdminRepository, AdminRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddControllers();
+builder.Services.AddDbContext<ApplicationDbContext>();
 builder.Services.AddScoped<IGadgetLoanRepository, GadgetLoanRepository>();
-//builder.Services.AddScoped<IUGadgetLoanRepository, UGadgetLoanRepository>();
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+/*
+var issuer = builder.Configuration["JWT:Issuer"];
+var audience = builder.Configuration["JWT:Audience"];
+var key = builder.Configuration["JWT:Key"];
+var app = builder.Build();
+*/
 
-
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.LoginPath = "/Authentication/Login";
-    options.AccessDeniedPath = "/Error/AccessDenied";
-});
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseSwagger(); // endpoints
+    app.UseSwaggerUI(); // swagger editor to show the action urls for each operation
 }
 
+app.UseAuthentication(); // token validation
 
-app.UseStaticFiles();
+app.UseAuthorization(); // which endpoints [URL] is allowed to be accessed 
 
-app.UseRouting();
-
-app.UseAuthentication();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+// maps you contrllers actions as urls
+app.MapControllers();
 
 app.Run();
